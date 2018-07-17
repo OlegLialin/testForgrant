@@ -37,7 +37,9 @@ gulp.task('browser-sync', function() { // Create a browser-sync task
 gulp.task('scripts', function() {
   return gulp.src([ // We take all necessary libraries (for concatenation of files)
     'app/bower/jquery/dist/jquery.min.js',
-    'app/bower/bootstrap/dist/js/bootstrap.min.js'// Take jQuery
+    'app/bower/popper.js/dist/umd/popper.min.js',
+    'app/bower/bootstrap/dist/js/bootstrap.min.js',
+    'app/bower/bootstrap-select/dist/js/bootstrap-select.min.js'// Take jQuery
     // We can take another library
   ])
     .pipe(concat('libs.min.js')) // We collect them in a heap in a new file libs.min.js
@@ -73,8 +75,7 @@ gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
     .pipe(gulp.dest('build'));
 
   var streamScriptsLibs = gulp.src([ // We take all necessary libraries (for concatenation of files)
-    'app/js/libs.min.js',
-    'app/js/classie.js'
+    'app/js/libs.min.js'
     // We can take another library
   ])
     .pipe(concat('libs.min.js')) // We collect them in a heap in a new file libs.min.js
@@ -82,8 +83,7 @@ gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
     .pipe(gulp.dest('build/js')); // Unload into the build/js
 
   var streamScriptsMain = gulp.src([ // We take all necessary libraries (for concatenation of files)
-    'app/js/main.js',
-    'app/js/speech-synthesis.js'
+    'app/js/main.js'
     // We can take another library
   ])
     .pipe(concat('main.min.js'))

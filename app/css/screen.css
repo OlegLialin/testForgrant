@@ -57,4 +57,76 @@ select::-ms-expand {
 input::-ms-clear {
   display: none; }
 
+.top-nav a {
+  color: black;
+  text-transform: uppercase; }
+  .top-nav a.active {
+    color: #80bdff; }
+
+.main-wrap {
+  text-align: center; }
+
+input {
+  text-align: center; }
+  input:focus {
+    text-align: left; }
+
+.bootstrap-select.select .dropdown-toggle .filter-option-inner-inner,
+.bootstrap-select.select .dropdown-menu li a {
+  text-align: center; }
+
+.bootstrap-select.select .btn-light {
+  background-color: white;
+  border-color: #dae0e5; }
+  .bootstrap-select.select .btn-light:hover {
+    border-color: #80bdff; }
+
+.custom-control:hover .fill-control-indicator {
+  background-color: #e9efff; }
+
+.custom-control.fill-checkbox {
+  --color: #435993; }
+  .custom-control.fill-checkbox .fill-control-input {
+    display: none;
+    border-color: var(--color); }
+    .custom-control.fill-checkbox .fill-control-input:checked ~ .fill-control-indicator {
+      background-color: var(--color);
+      border-color: var(--color);
+      background-size: 80%; }
+  .custom-control.fill-checkbox .fill-control-indicator {
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color);
+    -webkit-transition: .3s;
+    transition: .3s;
+    background-color: transperent;
+    background-size: 0%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"); }
+    .custom-control.fill-checkbox .fill-control-indicator:hover {
+      background-color: #e9efff;
+      border-color: var(--color); }
+
+.fill-control-description {
+  position: absolute;
+  left: 30px;
+  top: 0; }
+
+.row.textarea-wrap {
+  margin-left: auto;
+  margin-right: auto; }
+
+.textarea {
+  resize: none; }
+
+.form-btn {
+  margin-bottom: 400px; }
+
 /*# sourceMappingURL=maps/screen.css.map */
