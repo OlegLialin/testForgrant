@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "description": "Readme is coming... ---------------------",
+  "main": "gulpfile.js",
+  "authors": [
+    "Oleglialin"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^4.1.2"
+  }
+}
