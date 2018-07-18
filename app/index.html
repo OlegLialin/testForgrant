@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Questionary</title>
     <!-- inject:css -->
     <link rel="stylesheet" href="css/screen.css">
@@ -14,13 +14,13 @@
 <header class="row justify-content-center header">
     <ul role="menu" class="nav top-nav js-nav justify-content-center align-self-center">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Личная информация</a>
+            <a class="nav-link" href="#private-info">Личная информация</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Опыт</a>
+            <a class="nav-link" href="#exp">Опыт</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">О себе</a>
+            <a class="nav-link" href="#about-yourself">О себе</a>
         </li>
     </ul>
 </header>
@@ -41,15 +41,15 @@
     </div>
     <div class="row head-info">
         <div class="col">
-            <h2 class="h2">Личная информация</h2>
+            <h2 class="h2" id="private-info">Личная информация</h2>
         </div>
     </div>
     <form role="form" method="post" class="">
-        <div class="form-group col-sm-6 input-item">
+        <div class="form-group col-sm-11 col-md-9 input-item">
             <label for="name"></label>
             <input type="text" id="name" class="form-control input-name" placeholder="ФИО">
         </div>
-        <div class="form-group col-xm-3 col-sm-4 input-item ">
+        <div class="form-group col-sm-7 col-md-5  input-item ">
             <select class="form-control select js-select " data-size="7"  id="sel1" title="Год рождения" >
                 <option value="2013">2013</option>
                 <option value="2012">2012</option>
@@ -162,17 +162,17 @@
                 <option value="1905">1905</option>
             </select>
         </div>
-        <div class="form-group col-sm-6 input-item">
+        <div class="form-group col-sm-11 col-md-9 input-item">
             <label for="living-location"></label>
             <input type="text" id="living-location" class="form-control input-name"
                    placeholder="Место проживания">
         </div>
-        <div class="form-group col-sm-6 input-item">
+        <div class="form-group col-sm-11 col-md-9 input-item">
             <label for="skype"></label>
             <input type="text" id="skype" class="form-control input-name"
                    placeholder="Skype">
         </div>
-        <div class="form-group col-sm-6 input-item">
+        <div class="form-group col-sm-11 col-md-9 input-item">
             <div class="form-group">
                 <label for="email"></label>
                 <input type="email" id="email" class="form-control input-name"
@@ -187,11 +187,11 @@
         </div>
         <div class="row exp-wrap">
             <div class="col">
-                <h2 class="h2">Расскажите о своем опыте</h2>
+                <h2 class="h2" id="exp">Расскажите о своем опыте</h2>
             </div>
         </div>
         <div class="row justify-content-center checkboxes-wrap">
-            <div class="col-md-3">
+            <div class="col-xl-3 col-md-4">
                 <div class="form-group has-success">
                     <label class="custom-control fill-checkbox">
                         <input type="checkbox" class="fill-control-input">
@@ -214,7 +214,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xl-3 col-md-4">
                 <div class="form-group has-success">
                     <label class="custom-control fill-checkbox">
                         <input type="checkbox" class="fill-control-input">
@@ -237,7 +237,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xl-3 col-md-4">
                 <div class="form-group has-success">
                     <label class="custom-control fill-checkbox">
                         <input type="checkbox" class="fill-control-input">
@@ -268,13 +268,13 @@
         </div>
         <div class="row about-yourself">
             <div class="col">
-                <h2 class="h2">Расскажите о себе</h2>
+                <h2 class="h2" id="about-yourself">Расскажите о себе</h2>
                 <p class=" col-sm-6">Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас</p>
             </div>
         </div>
         <div class="row textarea-wrap justify-content-center">
-            <div class="form-group col-sm-8">
-                <textarea class="form-control textarea" rows="5"
+            <div class="form-group col-sm-11 col-md-9">
+                <textarea class="form-control textarea" rows="7"
                           placeholder="Понравилась тем, что..."></textarea>
             </div>
         </div>

@@ -1,10 +1,30 @@
+//-----------------------------------------------------------------------------
+// Fonts
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,300italic,300);
 
 $font: 'Roboto', 'Arial', 'Helvetica', sans-serif;
 
+//------------------------------------------------------------------------------
+// Font resizing
+@mixin font-size($size-value: 14) {
+  //  font-size: ($size-value) + px;
+  font-size: ($size-value / 14) + rem;
+}
+
+//------------------------------------------------------------------------------
+// Colours
+$malibu: #80bdff;
+$geyser: #dae0e5;
+$silver: #c8c8c8;
+$waikawa-gray: #5c6fa1;
+$zumthor: #e9efff;
+$chambray: #435993;
+
 body {
   font-family: $font;
+  min-width: 320px;
 }
+
 
 // Navigation
 .row.header {
@@ -14,15 +34,28 @@ body {
   height: 80px;
   width: 100%;
   margin: 0;
+  min-width: 320px;
 }
 
 .top-nav {
   a {
     color: black;
     text-transform: uppercase;
+    @include font-size(14);
+    font-weight: 400;
 
     &.active {
-      color: #80bdff;
+      color: $malibu;
+    }
+  }
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    a {
+      @include font-size(12);
+    }
+    .nav-link {
+      padding: 8px 10px;
     }
   }
 }
@@ -37,8 +70,9 @@ body {
   img {
     width: 100%;
     height: 100%;
-
+    min-width: 320px;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -46,9 +80,30 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0) 10%, rgba(255, 255, 255, 1) 20%);
+    background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0) 10%, rgba(255, 255, 255, 1) 50%);
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {
+      background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0) 10%, rgba(255, 255, 255, 1) 40%);
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+      background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0) 10%, rgba(255, 255, 255, 1) 30%);
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media screen and (min-width: 992px) {
+      background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0) 10%, rgba(255, 255, 255, 1) 20%);
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1300px) {
+      background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0) 10%, rgba(255, 255, 255, 1) 15%);
+    }
 
   }
+
 }
 
 .main-wrap {
@@ -66,23 +121,50 @@ body {
 
   h1 {
     font-weight: 200;
-    font-size: 70px;
+    @include font-size(70);
+
+  }
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+
+    margin-top: 100px;
+
+    h1 {
+      @include font-size(50);
+    }
   }
 }
 
 .row.profile {
   margin-top: 70px;
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    margin-top: 40px;
+
+  }
 }
 
 .row.head-info {
   margin-top: 28px;
+}
 
+.row.head-info,
+.row.exp-wrap,
+.row.about-yourself {
   h2 {
-    font-weight: 400;
-    font-size: 30px;
+    @include font-size(30);
+    font-weight: 300;
+
+    // Extra small devices (portrait phones, less than 576px)
+    @media (max-width: 575.98px) {
+      @include font-size(20);
+    }
   }
 }
 
+// Inputs styles
 .input-item {
   margin-right: auto;
   margin-left: auto;
@@ -94,34 +176,42 @@ body {
 
   input {
     height: 60px;
+    text-align: center;
+
+    &:focus {
+      text-align: left;
+    }
   }
 
   .form-control {
-    font-size: 23px;
-    color: #c8c8c8;;
+    @include font-size(23);
+    color: $silver;
 
     &:hover {
-      border-color: #80bdff;
+      border-color: $malibu;
     }
   }
 
   &:first-child {
     margin-top: 57px;
   }
+
   .form-control::-moz-placeholder {
-    color: #c8c8c8;
+    color: $silver;
     opacity: 1;
   }
+
   .form-control:-ms-input-placeholder {
-    color: #c8c8c8;
+    color: $silver;
   }
+
   .form-control::-webkit-input-placeholder {
-    color: #c8c8c8;
+    color: $silver;
   }
 
   // Input birthday style
   .bootstrap-select .dropdown-menu li a span.text {
-    color: #5c6fa1;
+    color: $waikawa-gray;
   }
 
   .bootstrap-select > .dropdown-toggle {
@@ -129,9 +219,17 @@ body {
   }
 
   .bootstrap-select .dropdown-toggle .filter-option-inner {
-    padding: 2%;
-    font-size: 23px;
-    color: #c8c8c8;
+    padding: 0;
+    @include font-size(23);
+    color: $silver;
+  }
+
+  .bootstrap-select .dropdown-menu[x-placement="top-start"]{
+    box-shadow: 0 -6px 25px -2px $silver;
+  }
+
+  .bootstrap-select .dropdown-menu[x-placement="bottom-start"]{
+    box-shadow: 0 6px 25px -2px $silver;
   }
 
   .dropup .dropdown-toggle::after, .dropdown-toggle::after {
@@ -176,18 +274,39 @@ body {
     background-color: white;
   }
 
-}
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    &:first-child {
+      margin-top: 37px;
+    }
 
-input {
-  text-align: center;
+    input {
+      height: 50px;
+    }
 
-  &:focus {
-    text-align: left;
+    .bootstrap-select > .dropdown-toggle {
+      height: 50px;
+    }
+
+    .bootstrap-select .dropdown-toggle .filter-option-inner {
+      padding: 0;
+      @include font-size(18);
+
+    }
+
+    .form-control {
+      @include font-size(18);
+    }
   }
 }
 
 .row.list-img {
   margin-top: 74px;
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    margin-top: 44px;
+  }
 }
 
 .row.exp-wrap {
@@ -197,6 +316,11 @@ input {
 // Checkboxes
 .checkboxes-wrap {
   margin-top: 54px;
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    margin-top: 24px;
+  }
 }
 
 .bootstrap-select.select {
@@ -207,9 +331,9 @@ input {
 
   .btn-light {
     background-color: white;
-    border-color: #dae0e5;
+    border-color: $geyser;
     &:hover {
-      border-color: #80bdff;
+      border-color: $malibu;
     }
   }
 }
@@ -217,31 +341,32 @@ input {
 .custom-control {
   &:hover{
     .fill-control-indicator{
-      background-color: #e9efff;
+      background-color: $zumthor;
     }
   }
 
   &.fill-checkbox {
-    --color: #435993;
+    width: 85%;
 
     .fill-control-input {
       display: none;
-      border-color: var(--color);
+      border-color: $chambray;
       &:checked ~ .fill-control-indicator {
-        background-color: var(--color);
-        border-color: var(--color);
-        background-size: 80%;
+        background-color: $chambray;
+        border-color: $chambray;
+        background-size: 65%;
       }
     }
+
     .fill-control-indicator {
       border-radius: 3px;
       display: inline-block;
       position: absolute;
       top: 4px;
       left: 0;
-      width: 16px;
-      height: 16px;
-      border: 2px solid var(--color);
+      width: 20px;
+      height: 20px;
+      border: 1px solid $chambray;
       transition: .3s;
       background-color: transperent;
       background-size: 0%;
@@ -249,9 +374,20 @@ input {
       background-repeat: no-repeat;
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
       &:hover{
-        background-color: #e9efff;
-        border-color: var(--color);
+        background-color: $zumthor;
+        border-color: $chambray;
       }
+
+      // Extra small devices (portrait phones, less than 576px)
+      @media (max-width: 575.98px) {
+        width: 16px;
+        height: 16px;
+        top: 2px;
+      }
+    }
+
+    @media (min-width: 767.98px) and (max-width: 1199.98px) {
+      width: 100%;
     }
   }
 }
@@ -260,10 +396,26 @@ input {
   position: absolute;
   left: 30px;
   top: 0;
+  @include font-size(16);
+
+  // Extra small devices (portrait phones, less than 1200px)
+  @media (max-width: 1199px) {
+    @include font-size(14);
+  }
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    @include font-size(13);
+  }
 }
 
 .row.profile-img {
   margin-top: 73px;
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    margin-top: 43px;;
+  }
 }
 
 .row.about-yourself {
@@ -271,6 +423,13 @@ input {
 
   p{
     margin: 0 auto;
+  }
+
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    p {
+      @include font-size(11);
+    }
   }
 }
 
@@ -289,12 +448,15 @@ input {
 .btn.form-btn{
   margin-top: 70px;
   margin-bottom: 400px;
-  font-size: 16px;
-  background-color: #435993;
+  @include font-size(16);
+  background-color: $chambray;
   padding: 15px 30px;
-  border-radius: 15px
+  border-radius: 15px;
+  // Extra small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+    margin-top: 40px;
+    @include font-size(14);
+    padding: 10px 25px;
+    margin-bottom: 50px;
+  }
 }
-
-
-
-
