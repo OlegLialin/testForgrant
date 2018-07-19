@@ -189,7 +189,7 @@ body {
   .input-item .bootstrap-select > .dropdown-toggle {
     height: 60px; }
   .input-item .bootstrap-select .dropdown-toggle .filter-option-inner {
-    padding: 0;
+    padding: 1%;
     font-size: 1.64286rem;
     color: #c8c8c8; }
   .input-item .bootstrap-select .dropdown-menu[x-placement="top-start"] {

@@ -44,13 +44,18 @@
             <h2 class="h2" id="private-info">Личная информация</h2>
         </div>
     </div>
-    <form role="form" method="post" class="">
+    <form role="form" action=""  class="needs-validation" id="my-form">
         <div class="form-group col-sm-11 col-md-9 input-item">
             <label for="name"></label>
-            <input type="text" id="name" class="form-control input-name" placeholder="ФИО">
+            <input type="text"
+                   id="name"
+                   name="name"
+                   class="form-control input-name"
+                   placeholder="ФИО"
+                   required>
         </div>
         <div class="form-group col-sm-7 col-md-5  input-item ">
-            <select class="form-control select js-select " data-size="7"  id="sel1" title="Год рождения" >
+            <select class="form-control select js-select " data-size="7" name="birthday"  id="sel1" title="Год рождения" required>
                 <option value="2013">2013</option>
                 <option value="2012">2012</option>
                 <option value="2011">2011</option>
@@ -164,19 +169,25 @@
         </div>
         <div class="form-group col-sm-11 col-md-9 input-item">
             <label for="living-location"></label>
-            <input type="text" id="living-location" class="form-control input-name"
+            <input type="text"
+                   name="living-location"
+                   id="living-location"
+                   class="form-control input-name"
                    placeholder="Место проживания">
         </div>
         <div class="form-group col-sm-11 col-md-9 input-item">
             <label for="skype"></label>
-            <input type="text" id="skype" class="form-control input-name"
+            <input type="text" id="skype" name="skype" class="form-control input-name"
                    placeholder="Skype">
         </div>
         <div class="form-group col-sm-11 col-md-9 input-item">
             <div class="form-group">
                 <label for="email"></label>
-                <input type="email" id="email" class="form-control input-name"
-                       placeholder="E-mail">
+                <input type="email"
+                       name="email"
+                       id="email"
+                       class="form-control input-name"
+                       placeholder="E-mail" required>
             </div>
         </div>
 
@@ -194,21 +205,21 @@
             <div class="col-xl-3 col-md-4">
                 <div class="form-group has-success">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="oocss" class="fill-control-input" >
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">БЭМ/OOCSS</span>
                     </label>
                 </div>
                 <div class="form-group has-warning">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="sass" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">Stylus/LESS/SASS</span>
                     </label>
                 </div>
                 <div class="form-group has-danger mb-0">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="svg" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">Работаю с SVG </span>
                     </label>
@@ -217,21 +228,21 @@
             <div class="col-xl-3 col-md-4">
                 <div class="form-group has-success">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="semantics" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">Верстаю семантично</span>
                     </label>
                 </div>
                 <div class="form-group has-warning">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="es5" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">ES2015/ES2016</span>
                     </label>
                 </div>
                 <div class="form-group has-danger mb-0">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="gulp" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">Gulp/GRUNT</span>
                     </label>
@@ -240,21 +251,21 @@
             <div class="col-xl-3 col-md-4">
                 <div class="form-group has-success">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="webpack" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">Webpack</span>
                     </label>
                 </div>
                 <div class="form-group has-warning">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="jQuery" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">jQuery</span>
                     </label>
                 </div>
                 <div class="form-group has-danger mb-0">
                     <label class="custom-control fill-checkbox">
-                        <input type="checkbox" class="fill-control-input">
+                        <input type="checkbox" name="git" class="fill-control-input">
                         <span class="fill-control-indicator"></span>
                         <span class="fill-control-description">Ипользую Git</span>
                     </label>
@@ -274,7 +285,9 @@
         </div>
         <div class="row textarea-wrap justify-content-center">
             <div class="form-group col-sm-11 col-md-9">
-                <textarea class="form-control textarea" rows="7"
+                <textarea class="form-control textarea"
+                          name="message"
+                          rows="7"
                           placeholder="Понравилась тем, что..."></textarea>
             </div>
         </div>
@@ -286,6 +299,7 @@
 <!-- endinject -->
 <!-- inject:js -->
 <script src="js/libs.min.js"></script>
+
 <script src="js/main.js"></script>
 
 <!-- endinject -->

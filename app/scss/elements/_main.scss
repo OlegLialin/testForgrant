@@ -219,7 +219,7 @@ body {
   }
 
   .bootstrap-select .dropdown-toggle .filter-option-inner {
-    padding: 0;
+    padding: 1%;
     @include font-size(23);
     color: $silver;
   }
